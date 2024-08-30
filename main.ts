@@ -1,7 +1,9 @@
 
+import { connect } from "./db/db";
 import {bootServer, app} from "./server";
 
-function run(): void {
+async function run(): Promise<void> {
+    await connect();
     bootServer();
 }
 
